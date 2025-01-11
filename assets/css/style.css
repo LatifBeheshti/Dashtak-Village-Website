@@ -923,7 +923,9 @@ body.active { overflow: hidden; }
 
   .hero { padding-block-start: 25px; }
 
-  .hero-title { margin-block-end: 30px; }
+  .hero-title { margin-block-end: 25px; 
+  font-size:larger;
+  }
 
   .hero .newsletter-text {
     display: block;
