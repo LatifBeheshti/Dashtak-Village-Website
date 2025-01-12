@@ -948,6 +948,66 @@ body.active { overflow: hidden; }
 
   .top-author .avatar { width: 85px; }
 
+/**
+Family-Tree
+**/
+
+.family-tree {
+  text-align: center;
+}
+.family-tree ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.family-tree ul li {
+  margin: 10px;
+  position: relative;
+  padding: 10px 5px 0 5px;
+  display: inline-block;
+}
+.family-tree ul li::before,
+.family-tree ul li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 20px;
+  border-top: 2px solid #000;
+}
+.family-tree ul li::before {
+  left: -50%;
+  border-right: 2px solid #000;
+}
+.family-tree ul li::after {
+  right: -50%;
+  border-left: 2px solid #000;
+}
+.family-tree ul li:only-child::before,
+.family-tree ul li:only-child::after {
+  display: none;
+}
+.family-tree ul li:first-child::before,
+.family-tree ul li:last-child::after {
+  border: none;
+}
+.family-tree ul li:first-child::after {
+  border-left: 2px solid #000;
+}
+.family-tree ul li:last-child::before {
+  border-right: 2px solid #000;
+}
+.family-tree ul li div {
+  padding: 10px;
+  border: 2px solid #000;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.family-tree ul li div:hover {
+  background-color: #e0e0e0;
+}
+
 
 
   /**
