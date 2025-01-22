@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script defer src="scripts.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
-  
+
   <body>
     <!-- Header -->
     <header>
@@ -19,10 +21,10 @@
           <h1>قریه دشتک</h1>
         </div>
         <!-- Search Bar Container -->
-<div class="search-bar-container">
-  <input id="search-input" type="text" placeholder="جستجو...">
-  <i id="search-icon" class="fas fa-search"></i>
-</div>
+        <div class="search-bar-container">
+          <input id="search-input" type="text" placeholder="جستجو..." />
+          <i id="search-icon" class="fas fa-search"></i>
+        </div>
 
         <button data-nav-toggler class="nav-toggler">☰</button>
         <ul>
@@ -39,16 +41,35 @@
     <main>
       <!-- Home Section -->
       <section id="home" class="section">
-        <h2>خوش آمدید به تاریخچه خانواده ما</h2>
-        <p>ریشه‌ها و میراث خانواده ما را در گذر نسل‌ها کاوش کنید.</p>
+        <h2>به وب سایت قریه دشتک خوش آمدید</h2>
+        <p>
+          این وب‌سایت با هدف شناسایی و حفظ ریشه‌ها و میراث خانواده دشتک، همچنین
+          ایجاد ارتباط عمیق با هویت خانوادگی برای نسل‌های آینده دشتک طراحی شده
+          است. با استفاده از این پلتفرم، می‌توانید به کاوش در تاریخچه، شخصیت‌ها،
+          افتخارات و دستاوردهای خانواده دشتک در گذر زمان بپردازید.
+        </p>
       </section>
 
       <!-- About Section -->
       <section id="about" class="section">
-        <h2>درباره ما</h2>
+        <h2>درباره قریه دشتک</h2>
         <p>
-          ما از تباری غنی برخوردار هستیم که پر از داستان‌های شجاعت، خرد و
-          دستاوردها است.
+          مروستای دشتک، واقع در شهرستان عنابه ولایت پنجشیر و در کنار دریای زیبای
+          پنجشیر، قدمتی تاریخی و فرهنگی دارد. این روستا توسط مرحوم گلزار خان از
+          مرحوم احمد بخش صاحب، پدر سراج الزبیر مجددی که بعدها به سرهند کوچ کرد،
+          به نرخ همان زمان خریداری شد. از آن زمان تاکنون، این مکان به‌عنوان محل
+          سکونت و زندگی برای نسل‌های مختلف خاندان گلزار خان استفاده شده است.
+          روستای دشتک از سمت شمال به قریه سرک شاهی و جنوب به دریای پنجشیر محدود
+          می‌شود. از سمت شرق به سربند جوی دشتک و از غرب به سربند جوی قریه عنابه
+          امتداد دارد. خانه مرحوم گلزار خان و سکونتگاه اولاد وی، به‌دلیل جنگ‌ها
+          در دوره جهاد علیه شوروی به‌کلی تخریب شد. خرابه‌های این مکان هنوز هم
+          باقی مانده‌اند و به‌عنوان نشانی از تاریخ پرفرازونشیب این منطقه به چشم
+          می‌خورند. همچنین، مسجد تاریخی قریه دشتک که روبروی قلعه و بر بالای جوی
+          آب قرار داشت، از دوران مرحوم گلزار خان به‌جا مانده است. در کنار آن، دو
+          درخت چنار کهنسال با قدمتی چندصدساله همچنان پابرجا هستند و به‌عنوان
+          جاذبه‌های طبیعی و تاریخی، یادآور میراث گران‌بهای گذشتگان این
+          منطقه‌اند. این درختان نمادی از اصالت و هویت تاریخی قریه دشتک به شمار
+          می‌روند و ارزش فراوانی برای ساکنان و بازدیدکنندگان دارند.
         </p>
       </section>
 
@@ -63,9 +84,7 @@
         <div id="chart" class="chart-container">
           <svg width="1000" height="800"></svg>
         </div>
-
         <script>
-          // Pedigree data with Farsi names
           const data = {
             name: "گلزار خان",
             children: [
@@ -100,6 +119,11 @@
                         children: [
                           { name: "عبدالجبار" },
                           { name: "عبدالواسع" },
+                        ],
+                      },
+                      {
+                        name: "عبدالغفور خان",
+                        children: [
                           { name: "عبدالستار" },
                           { name: "عبدالشکور لنگریان" },
                           { name: "عبدالصبور لنگریان" },
@@ -117,6 +141,11 @@
                       { name: "سکندر خان" },
                     ],
                   },
+                ],
+              },
+              {
+                name: "خان پاچا خان",
+                children: [
                   {
                     name: "محمد یعقوب خان",
                     children: [
@@ -153,7 +182,9 @@
           const tree = d3.tree().size([height - 100, width - 200]);
           const root = d3.hierarchy(data);
 
-          const links = tree(root).links();
+          tree(root);
+
+          const links = root.links();
           const nodes = root.descendants();
 
           // Draw links
@@ -169,9 +200,12 @@
                 .linkHorizontal()
                 .x((d) => d.y)
                 .y((d) => d.x)
-            );
+            )
+            .attr("fill", "none")
+            .attr("stroke", "#ccc")
+            .attr("stroke-width", 2);
 
-          // Draw nodes with rectangles
+          // Draw nodes
           const node = svg
             .selectAll(".node")
             .data(nodes)
@@ -182,26 +216,25 @@
 
           node
             .append("rect")
-            .attr("width", (d) => Math.max(80, d.data.name.length * 10)) // Dynamically adjust width based on name length
-            .attr("height", 40) // Height of the rectangle
-            .attr("rx", 8) // Rounded corners (optional)
-            .attr("ry", 8) // Rounded corners (optional)
-            .attr("fill", "#6c757d") // Set the rectangle color
-            .on("click", function (event, d) {
-              window.location.href = "#"; // You can replace with actual links
+            .attr("width", (d) => Math.max(80, d.data.name.length * 10))
+            .attr("height", 40)
+            .attr("rx", 8)
+            .attr("ry", 8)
+            .attr("fill", "#6c757d")
+            .attr("stroke", "#333")
+            .attr("stroke-width", 0.5)
+            .on("click", (event, d) => {
+              window.location.href = "#"; // Replace with actual links if necessary
             });
 
           node
             .append("text")
-            .attr("dy", 20) // Adjust vertical alignment
-            .attr("x", (d) => Math.max(80, d.data.name.length * 10) / 2) // Center text horizontally
-            .style("text-anchor", "middle") // Center the text
-            .style("fill", "black") // Text color changed to black
-            .html((d) => d.data.name)
-            .on("click", function (event, d) {
-              event.stopPropagation();
-              // Handle name click if needed
-            });
+            .attr("dy", 25) // Adjust vertical alignment (matches rectangle center)
+            .attr("x", (d) => Math.max(80, d.data.name.length * 10) - 20) // Add more space to the right
+            .style("text-anchor", "start") // Align text to start from x position
+            .style("fill", "black") // Set text color to black
+            .style("font-size", "10px") // Adjust font size
+            .text((d) => d.data.name);
         </script>
       </section>
 
@@ -211,72 +244,106 @@
         <p>برای اطلاعات بیشتر درباره تاریخچه خانواده ما با ما تماس بگیرید.</p>
         <p>ایمیل: family@history.com | تلفن: +123-456-7890</p>
       </section>-->
-     <!-- Contact Section -->
-     <section id="contact" class="section">
-      <h2>تماس با ما</h2>
-      <p>برای اطلاعات بیشتر درباره تاریخچه خانواده ما با ما تماس بگیرید.</p>
-      <p>ایمیل: family@history.com | تلفن: +123-456-7890</p>
-    
-      <!-- Contact Form -->
-      <form id="contact-form">
-        <div class="form-grid">
-          <!-- First Name -->
-          <div class="input-container">
-            <label for="first-name">نام</label>
-            <div class="input-wrapper">
-              <span class="icon">&#xf007;</span> <!-- User Icon -->
-              <input type="text" id="first-name" name="first-name" placeholder="نام خود را وارد کنید" required />
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <h2>تماس با ما</h2>
+        <p>برای اطلاعات بیشتر درباره تاریخچه خانواده ما با ما تماس بگیرید.</p>
+        <p>ایمیل: family@history.com | تلفن: +123-456-7890</p>
+
+        <!-- Contact Form -->
+        <form id="contact-form">
+          <div class="form-grid">
+            <!-- First Name -->
+            <div class="input-container">
+              <label for="first-name">نام</label>
+              <div class="input-wrapper">
+                <span class="icon">&#xf007;</span>
+                <!-- User Icon -->
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  placeholder="نام خود را وارد کنید"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="input-container">
+              <label for="last-name">نام خانوادگی</label>
+              <div class="input-wrapper">
+                <span class="icon">&#xf007;</span>
+                <!-- User Icon -->
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  placeholder="نام خانوادگی خود را وارد کنید"
+                  required
+                />
+              </div>
             </div>
           </div>
-    
-          <!-- Last Name -->
-          <div class="input-container">
-            <label for="last-name">نام خانوادگی</label>
-            <div class="input-wrapper">
-              <span class="icon">&#xf007;</span> <!-- User Icon -->
-              <input type="text" id="last-name" name="last-name" placeholder="نام خانوادگی خود را وارد کنید" required />
+
+          <div class="form-grid">
+            <!-- Email -->
+            <div class="input-container">
+              <label for="email">ایمیل</label>
+              <div class="input-wrapper">
+                <span class="icon">&#xf0e0;</span>
+                <!-- Envelope Icon -->
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="ایمیل خود را وارد کنید"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-container">
+              <label for="phone">تلفن (اختیاری)</label>
+              <div class="input-wrapper">
+                <span class="icon">&#xf095;</span>
+                <!-- Phone Icon -->
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="شماره تلفن خود را وارد کنید"
+                />
+              </div>
             </div>
           </div>
-        </div>
-    
-        <div class="form-grid">
-          <!-- Email -->
+
+          <!-- Message -->
           <div class="input-container">
-            <label for="email">ایمیل</label>
+            <label for="message">پیام</label>
             <div class="input-wrapper">
-              <span class="icon">&#xf0e0;</span> <!-- Envelope Icon -->
-              <input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید" required />
+              <span class="icon">&#xf075;</span>
+              <!-- Message Icon -->
+              <textarea
+                id="message"
+                name="message"
+                placeholder="...پیام خود را اینجا بنویسید"
+                required
+              ></textarea>
             </div>
           </div>
-    
-          <!-- Phone Number -->
-          <div class="input-container">
-            <label for="phone">تلفن (اختیاری)</label>
-            <div class="input-wrapper">
-              <span class="icon">&#xf095;</span> <!-- Phone Icon -->
-              <input type="tel" id="phone" name="phone" placeholder="شماره تلفن خود را وارد کنید" />
-            </div>
+
+          <!-- Submit Button -->
+          <div class="button-container">
+            <button type="submit" class="submit-btn">
+              <span class="send-icon">&#xf1d8;</span>
+              <!-- Send Icon -->
+              ارسال
+            </button>
           </div>
-        </div>
-    
-        <!-- Message -->
-        <div class="input-container">
-          <label for="message">پیام</label>
-          <div class="input-wrapper">
-            <span class="icon">&#xf075;</span> <!-- Message Icon -->
-            <textarea id="message" name="message" placeholder="...پیام خود را اینجا بنویسید" required></textarea>
-          </div>
-        </div>
-    
-        <!-- Submit Button -->
-        <div class="button-container">
-          <button type="submit" class="submit-btn">
-            <span class="send-icon">&#xf1d8;</span> <!-- Send Icon -->
-            ارسال
-          </button>
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
     </main>
 
     <!-- Footer -->

@@ -25,62 +25,6 @@ header nav {
   justify-content: space-between;
   align-items: center;
 }
-/* Search Bar Container Styles */
-.search-bar-container {
-  position: relative;
-  width: 250px;
-  margin: 20px auto;
-}
-/* Search Bar Input Field Styles */
-#search-input {
-  width: 100%;
-  padding: 5px 35px 5px 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: right;
-  direction: rtl;
-}
-/* Search Bar Magnifier Icon Styles */
-#search-icon {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #5d5f5f;
-  cursor: pointer;
-}
-
-/* Search Bar Results Container Styles */
-.search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  display: none;
-}
-
-/* Search Bar Results Item Styles */
-.search-results-item {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.search-results-item:hover {
-  background-color: #f0f0f0;
-}
-
-/* Search Bar Results Item Active Styles */
-.search-results-item.active {
-  background-color: #4caf50;
-  color: #fff;
-}
 
 header .brand h1 {
   font-size: 1.5rem;
@@ -119,6 +63,60 @@ header.active ul {
   display: block;
 }
 
+/* Search Bar Styles */
+.search-bar-container {
+  position: relative;
+  width: 250px;
+  margin: 20px auto;
+}
+
+#search-input {
+  width: 100%;
+  padding: 5px 35px 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  direction: rtl;
+}
+
+#search-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #5d5f5f;
+  cursor: pointer;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+}
+
+.search-results-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.search-results-item:hover {
+  background-color: #f0f0f0;
+}
+
+.search-results-item.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
 /* Section Styles */
 .section {
   padding: 2rem;
@@ -138,39 +136,33 @@ header.active ul {
 /* Pedigree Section */
 .pedigree-section {
   background-color: #f0f8ff;
-  padding: 3rem 1rem;
+  padding: 1rem 0.5rem; /* Reduced padding */
 }
 
-/* Node and link styling */
+/* Node and Link Styling */
 .node rect {
   fill: #6c757d;
   cursor: pointer;
   stroke: #333;
-  stroke-width: 1.5px;
-  width: 80px; /* Adjust rectangle width */
-  height: 40px; /* Adjust rectangle height */
-  rx: 8px; /* Rounded corners for rectangles */
-  margin-top: 5px; /* Add top space */
-  margin-bottom: 5px; /* Add bottom space */
+  stroke-width: 0.5px;
+  rx: 8px;
 }
 
 .node text {
-  font-size: 14px; /* Adjust font size to fit inside the rectangle */
+  font-size: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  fill: #fff; /* White text inside the rectangle */
+  fill: #fff;
   font-weight: 600;
-  cursor: pointer;
-  text-anchor: middle; /* Center text horizontally */
-  dy: 14px; /* Center vertically within the rectangle */
+  text-anchor: middle;
+  dy: 14px;
   transition: all 0.3s ease-in-out;
 }
 
 .node:hover text {
-  fill: #007bff; /* Highlight name on hover */
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  fill: #007bff;
+  transform: scale(1.1);
 }
 
-/* Add hover effect for nodes */
 .node:hover rect {
   fill: #007bff;
 }
@@ -181,26 +173,15 @@ header.active ul {
   stroke-width: 2px;
 }
 
-/* Adjust spacing between name and rectangle */
-.node text {
-  margin-left: 12px; /* Space between text and rectangle */
-}
-
-/* Scrollable container for the chart */
 .chart-container {
   width: 100%;
-  height: 600px;
+  height: 800px;
   overflow: auto;
   border: 1px solid #ccc;
-  overflow-x: scroll; /* Horizontal scroll */
-  overflow-y: scroll; /* Vertical scroll */
+  padding: 0.2rem; /* Minimal padding for better use of space */
 }
 
-.section {
-  padding: 2rem;
-  text-align: center;
-}
-
+/* Contact Form Styles */
 #contact-form {
   width: 50%;
   margin: 0 auto;
@@ -242,12 +223,12 @@ header.active ul {
 .input-wrapper input,
 .input-wrapper textarea {
   width: 100%;
-  padding: 10px 10px 10px 35px; /* Adjust for icon padding */
+  padding: 10px 10px 10px 35px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  text-align: right; /* Right-to-left alignment */
+  text-align: right;
 }
 
 .input-wrapper textarea {
@@ -289,6 +270,7 @@ header.active ul {
   font-weight: 900;
   font-size: 1rem;
 }
+
 /* Footer Styles */
 footer {
   text-align: center;
