@@ -175,12 +175,11 @@ header.active ul {
 
 .chart-container {
   width: 100%;
-  height: 800px;
+  height: 1000px; /* Increased height for better spacing */
   overflow: auto;
   border: 1px solid #ccc;
-  padding: 0.2rem; /* Minimal padding for better use of space */
+  padding: 1rem; /* Added padding for better spacing */
 }
-
 /* Contact Form Styles */
 #contact-form {
   width: 50%;

@@ -85,157 +85,159 @@
           <svg width="1000" height="800"></svg>
         </div>
         <script>
-          const data = {
-            name: "گلزار خان",
+  const data = {
+    name: "گلزار خان",
+    children: [
+      {
+        name: "لنگر خان",
+        children: [
+          {
+            name: "فتح محمد خان",
             children: [
               {
-                name: "لنگر خان",
+                name: "عبدالروف خان",
                 children: [
-                  {
-                    name: "فتح محمد خان",
-                    children: [
-                      {
-                        name: "عبدالروف خان",
-                        children: [
-                          { name: "عبدالرحیم روفی" },
-                          { name: "عبدالرحمن" },
-                          { name: "محمدسرور" },
-                          { name: "عبدالله روفی" },
-                          { name: "عبدالواحد روفی" },
-                          { name: "عبدالقدیر روفی" },
-                          { name: "عبدالاحد بهشتی" },
-                          { name: "سراج‌الحق لنگریان" },
-                        ],
-                      },
-                      {
-                        name: "محمد اکرم خان",
-                        children: [
-                          { name: "محمد قاسم" },
-                          { name: "محمد شریف اکرم‌ی" },
-                        ],
-                      },
-                      {
-                        name: "عبدالغفار خان",
-                        children: [
-                          { name: "عبدالجبار" },
-                          { name: "عبدالواسع" },
-                        ],
-                      },
-                      {
-                        name: "عبدالغفور خان",
-                        children: [
-                          { name: "عبدالستار" },
-                          { name: "عبدالشکور لنگریان" },
-                          { name: "عبدالصبور لنگریان" },
-                        ],
-                      },
-                      {
-                        name: "عبدالاحمد خان",
-                        children: [
-                          { name: "عبدالرزاق خان" },
-                          { name: "عبدالبصیر لنگریان" },
-                          { name: "عبدالجمیل لنگریان" },
-                        ],
-                      },
-                      { name: "شاه‌عالم خان" },
-                      { name: "سکندر خان" },
-                    ],
-                  },
+                  { name: "عبدالرحیم روفی" },
+                  { name: "عبدالرحمن" },
+                  { name: "محمدسرور" },
+                  { name: "عبدالله روفی" },
+                  { name: "عبدالواحد روفی" },
+                  { name: "عبدالقدیر روفی" },
+                  { name: "عبدالاحد بهشتی" },
+                  { name: "سراج‌الحق لنگریان" },
                 ],
               },
               {
-                name: "خان پاچا خان",
+                name: "محمد اکرم خان",
                 children: [
-                  {
-                    name: "محمد یعقوب خان",
-                    children: [
-                      {
-                        name: "محمد یوسف خان",
-                        children: [{ name: "حیات‌الله خان" }],
-                      },
-                      {
-                        name: "محمد ایوب خان",
-                        children: [{ name: "آصف خان" }],
-                      },
-                      {
-                        name: "عبدالکریم خان",
-                        children: [{ name: "خلیل خان" }],
-                      },
-                    ],
-                  },
+                  { name: "محمد قاسم" },
+                  { name: "محمد شریف اکرم‌ی" },
                 ],
               },
+              {
+                name: "عبدالغفار خان",
+                children: [
+                  { name: "عبدالجبار" },
+                  { name: "عبدالواسع" },
+                ],
+              },
+              {
+                name: "عبدالغفور خان",
+                children: [
+                  { name: "عبدالستار" },
+                  { name: "عبدالشکور لنگریان" },
+                  { name: "عبدالصبور لنگریان" },
+                ],
+              },
+              {
+                name: "عبدالاحمد خان",
+                children: [
+                  { name: "عبدالرزاق خان" },
+                  { name: "عبدالبصیر لنگریان" },
+                  { name: "عبدالجمیل لنگریان" },
+                ],
+              },
+              { name: "شاه‌عالم خان" },
+              { name: "سکندر خان" },
             ],
-          };
+          },
+        ],
+      },
+      {
+        name: "خان پاچا خان",
+        children: [
+          {
+            name: "محمد یعقوب خان",
+            children: [
+              {
+                name: "محمد یوسف خان",
+                children: [{ name: "حیات‌الله خان" }],
+              },
+              {
+                name: "محمد ایوب خان",
+                children: [{ name: "آصف خان" }],
+              },
+              {
+                name: "عبدالکریم خان",
+                children: [{ name: "خلیل خان" }],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  };
 
-          // SVG setup
-          const width = 1000;
-          const height = 800;
-          const svg = d3
-            .select("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(50,50)");
+  // SVG setup
+  const width = 1200; // Increased width for better spacing
+  const height = 1000; // Increased height for better spacing
+  const svg = d3
+    .select("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(100, 50)"); // Adjusted translation for better spacing
 
-          // Create a tree layout
-          const tree = d3.tree().size([height - 100, width - 200]);
-          const root = d3.hierarchy(data);
+  // Create a tree layout with explicit node separation
+  const tree = d3.tree()
+    .size([height - 50, width - 300]) // Adjusted size for better spacing
+    .separation((a, b) => (a.parent === b.parent ? 2 : 3)); // Increased separation between nodes
 
-          tree(root);
+  const root = d3.hierarchy(data);
+  tree(root);
 
-          const links = root.links();
-          const nodes = root.descendants();
+  const links = root.links();
+  const nodes = root.descendants();
 
-          // Draw links
-          svg
-            .selectAll(".link")
-            .data(links)
-            .enter()
-            .append("path")
-            .attr("class", "link")
-            .attr(
-              "d",
-              d3
-                .linkHorizontal()
-                .x((d) => d.y)
-                .y((d) => d.x)
-            )
-            .attr("fill", "none")
-            .attr("stroke", "#ccc")
-            .attr("stroke-width", 2);
+  // Draw links
+  svg
+    .selectAll(".link")
+    .data(links)
+    .enter()
+    .append("path")
+    .attr("class", "link")
+    .attr(
+      "d",
+      d3
+        .linkHorizontal()
+        .x((d) => d.y)
+        .y((d) => d.x)
+    )
+    .attr("fill", "none")
+    .attr("stroke", "#ccc")
+    .attr("stroke-width", 2);
 
-          // Draw nodes
-          const node = svg
-            .selectAll(".node")
-            .data(nodes)
-            .enter()
-            .append("g")
-            .attr("class", "node")
-            .attr("transform", (d) => `translate(${d.y},${d.x})`);
+  // Draw nodes with increased spacing
+  const node = svg
+    .selectAll(".node")
+    .data(nodes)
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", (d) => `translate(${d.y},${d.x})`);
 
-          node
-            .append("rect")
-            .attr("width", (d) => Math.max(80, d.data.name.length * 10))
-            .attr("height", 40)
-            .attr("rx", 8)
-            .attr("ry", 8)
-            .attr("fill", "#6c757d")
-            .attr("stroke", "#333")
-            .attr("stroke-width", 0.5)
-            .on("click", (event, d) => {
-              window.location.href = "#"; // Replace with actual links if necessary
-            });
+  node
+    .append("rect")
+    .attr("width", 120) // Fixed width for better readability
+    .attr("height", 40) // Fixed height for better readability
+    .attr("rx", 8)
+    .attr("ry", 8)
+    .attr("fill", "#6c757d")
+    .attr("stroke", "#333")
+    .attr("stroke-width", 0.5)
+    .on("click", (event, d) => {
+      window.location.href = "#"; // Replace with actual links if necessary
+    });
 
-          node
-            .append("text")
-            .attr("dy", 25) // Adjust vertical alignment (matches rectangle center)
-            .attr("x", (d) => Math.max(80, d.data.name.length * 10) - 20) // Add more space to the right
-            .style("text-anchor", "start") // Align text to start from x position
-            .style("fill", "black") // Set text color to black
-            .style("font-size", "10px") // Adjust font size
-            .text((d) => d.data.name);
-        </script>
+  node
+    .append("text")
+    .attr("dy", 25) // Adjusted vertical alignment to match the rectangle height
+    .attr("x", 60) // Centered text within the rectangle
+    .style("text-anchor", "middle") // Center text horizontally
+    .style("fill", "white") // White text for better contrast
+    .style("font-size", "12px") // Increased font size for better readability
+    .text((d) => d.data.name);
+</script>
       </section>
 
       <!-- Contact Section -->
