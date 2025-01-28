@@ -136,7 +136,7 @@ header.active ul {
 /* Pedigree Section */
 .pedigree-section {
   background-color: #f0f8ff;
-  padding: 1rem 0.5rem; /* Reduced padding */
+  /* Reduced padding */
 }
 
 /* Node and Link Styling */
@@ -174,12 +174,17 @@ header.active ul {
 }
 
 .chart-container {
-  width: 100%;
-  height: 1600px; /* Increased height for better spacing */
-  overflow: auto;
+  width: 100%; /* or any specific value, like 1200px */
+  height: 1500px; /* Increase height to visualize more content */
+  overflow-y: auto; /* Keeps vertical scrolling enabled */
   border: 1px solid #ccc;
-  padding: 0.5rem; /* Added padding for better spacing */
+  background-color: #f9f9f9;
+  position: relative;
+  padding-bottom: 0.5rem;
+  padding-top: 5rem;
+  padding-left: 5rem;
 }
+
 /* Contact Form Styles */
 #contact-form {
   width: 50%;
@@ -247,7 +252,7 @@ header.active ul {
 }
 
 .submit-btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
