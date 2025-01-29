@@ -175,14 +175,15 @@ header.active ul {
 
 .chart-container {
   width: 100%; /* or any specific value, like 1200px */
-  height: 1500px; /* Increase height to visualize more content */
+  height: 800px; /* Increase height to visualize more content */
   overflow-y: auto; /* Keeps vertical scrolling enabled */
   border: 1px solid #ccc;
   background-color: #f9f9f9;
   position: relative;
   padding-bottom: 0.5rem;
   padding-top: 5rem;
-  padding-left: 5rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 /* Contact Form Styles */

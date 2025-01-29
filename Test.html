@@ -6,244 +6,260 @@
     <title>Pedigree Chart</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-      .chart-container {
-        margin: auto;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
         text-align: center;
+      }
+      .pedigree-container {
+        width: 100%;
+        max-width: 1600px;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      h2 {
+        font-size: 24px;
+        color: #343a40;
+        margin-bottom: 20px;
+      }
+      .chart-container {
+        overflow-x: auto;
+        padding: 10px;
       }
       .node rect {
         cursor: pointer;
+        transition: fill 0.3s ease;
+      }
+      .node rect:hover {
+        fill: #1f75cb;
       }
     </style>
   </head>
   <body>
-    <section id="pedigree" class="section pedigree-section">
+    <section id="pedigree" class="pedigree-container">
       <h2>شجره‌نامه خانواده</h2>
-      <div id="chart" class="chart-container">
+      <div class="chart-container">
         <svg width="1500" height="1400"></svg>
       </div>
       <script>
         const data = {
-          name: "گلزار خان",
+          name: "ملک شجاع خان",
           children: [
             {
-              name: "لنگر خان",
+              name: "محمد وصال خان",
               children: [
                 {
-                  name: "فتح محمد خان",
+                  name: "محمد غزال خان",
                   children: [
                     {
-                      name: "عبدالروف خان",
+                      name: "گلزار خان",
                       children: [
                         {
-                          name: "عبدالرحیم روفی",
+                          name: "لنگر خان",
                           children: [
                             {
-                              name: "محمد نذیر",
-                              children: [
-                                { name: "احمد جاوید دشتی" },
-                                { name: "احمد شبیر دشتی" },
-                                { name: "احمد نصیر دشتی" },
-                              ],
-                            },
-                          ],
-                        },
-                        { name: "عبدالرحمن" },
-                        {
-                          name: "محمدسرور",
-                          children: [
-                            {
-                              name: "هدایت الله روفی",
-                              children: [
-                                { name: "احمد عثمان دشتی" },
-                                { name: "حمزه دشتی" },
-                              ],
-                            },
-                            { name: "احمد شجاع دشتی" },
-                          ],
-                        },
-                        {
-                          name: "عبدالله روفی",
-                          children: [{ name: "عبیدالله روفی" }],
-                        },
-                        {
-                          name: "عبدالواحد روفی",
-                          children: [
-                            { name: "محمد عمر دشتی" },
-                            { name: "سلیمان دشتی" },
-                          ],
-                        },
-                        {
-                          name: "عبدالقدیر روفی",
-                          children: [
-                            {
-                              name: "عبدالمتین روفی",
-                              children: [{ name: "سلطان احمد روفی" }],
-                            },
-                            {
-                              name: "عبدالمبین روفی",
-                              children: [{ name: "to be added" }],
-                            },
-                          ],
-                        },
-                        {
-                          name: "عبدالاحد بهشتی",
-                          children: [
-                            { name: "عبداللطیف بهشتی" },
-                            {
-                              name: "عبدالحسیب بهشتی",
-                              children: [
-                                { name: "ادیب بهشتی" },
-                                { name: "انس بهشتی" },
-                              ],
-                            },
-                            { name: "عبدالعزیز بهشتی" },
-                            {
-                              name: "عبدالباعث بهشتی",
+                              name: "فتح محمد خان",
                               children: [
                                 {
-                                  name: "محمد یعقوب بهشتی",
+                                  name: "عبدالروف خان",
+                                  children: [
+                                    {
+                                      name: "عبدالرحیم روفی",
+                                      children: [
+                                        {
+                                          name: "محمد نذیر",
+                                          children: [
+                                            { name: "احمد جاوید دشتی" },
+                                            { name: "احمد شبیر دشتی" },
+                                            { name: "احمد نصیر دشتی" },
+                                          ],
+                                        },
+                                      ],
+                                    },
+                                    { name: "عبدالرحمن" },
+                                    {
+                                      name: "محمدسرور",
+                                      children: [
+                                        {
+                                          name: "هدایت الله روفی",
+                                          children: [
+                                            { name: "احمد عثمان دشتی" },
+                                            { name: "حمزه دشتی" },
+                                          ],
+                                        },
+                                        { name: "احمد شجاع دشتی" },
+                                      ],
+                                    },
+                                    {
+                                      name: "عبدالله روفی",
+                                      children: [{ name: "عبیدالله روفی" }],
+                                    },
+                                    {
+                                      name: "عبدالواحد روفی",
+                                      children: [
+                                        { name: "محمد عمر دشتی" },
+                                        { name: "سلیمان دشتی" },
+                                      ],
+                                    },
+                                    {
+                                      name: "عبدالقدیر روفی",
+                                      children: [
+                                        {
+                                          name: "عبدالمتین روفی",
+                                          children: [
+                                            { name: "سلطان احمد روفی" },
+                                          ],
+                                        },
+                                        {
+                                          name: "عبدالمبین روفی",
+                                          children: [{ name: "to be added" }],
+                                        },
+                                      ],
+                                    },
+                                    {
+                                      name: "عبدالاحد بهشتی",
+                                      children: [
+                                        { name: "عبداللطیف بهشتی" },
+                                        {
+                                          name: "عبدالحسیب بهشتی",
+                                          children: [
+                                            { name: "ادیب بهشتی" },
+                                            { name: "انس بهشتی" },
+                                          ],
+                                        },
+                                        { name: "عبدالعزیز بهشتی" },
+                                        {
+                                          name: "عبدالباعث بهشتی",
+                                          children: [
+                                            { name: "محمد یعقوب بهشتی" },
+                                          ],
+                                        },
+                                        { name: "احمد یاسر بهشتی" },
+                                      ],
+                                    },
+                                    {
+                                      name: "سراج‌الحق لنگریان",
+                                      children: [{ name: "ایمان لنگریان" }],
+                                    },
+                                  ],
+                                },
+                                {
+                                  name: "محمد اکرم خان",
+                                  children: [
+                                    {
+                                      name: "محمد قاسم",
+                                      children: [
+                                        {
+                                          name: "محمد شعیب",
+                                          children: [
+                                            {
+                                              name: "احمد شهیر دشتی",
+                                              children: [
+                                                { name: "تیمور دشتی" },
+                                              ],
+                                            },
+                                            {
+                                              name: "احمد منیر دشتی",
+                                              children: [{ name: "مالک دشتی" }],
+                                            },
+                                          ],
+                                        },
+                                        {
+                                          name: "احمد مختار",
+                                          children: [{ name: "to be added" }],
+                                        },
+                                        {
+                                          name: "احمد ضیا کچکنی",
+                                          children: [{ name: "to be added" }],
+                                        },
+                                        {
+                                          name: "محمد فهیم دشتی",
+                                          children: [{ name: "ادریس دشتی" }],
+                                        },
+                                      ],
+                                    },
+                                    {
+                                      name: "محمد شریف اکرمی",
+                                      children: [{ name: "میرویس اکرم" }],
+                                    },
+                                    {
+                                      name: "محمد همایون",
+                                      children: [{ name: "to be added" }],
+                                    },
+                                  ],
                                 },
                               ],
                             },
-                            { name: "احمد یاسر بهشتی" },
+                            {
+                              name: "شاه‌عالم خان",
+                              children: [{ name: "لعل آغا" }],
+                            },
+                            {
+                              name: "سکندر خان",
+                              children: [{ name: "امان الله حسرت" }],
+                            },
                           ],
                         },
                         {
-                          name: "سراج‌الحق لنگریان",
-                          children: [{ name: "ایمان لنگریان" }],
-                        },
-                      ],
-                    },
-                    {
-                      name: "محمد اکرم خان",
-                      children: [
-                        {
-                          name: "محمد قاسم",
+                          name: "خان پاچا خان",
                           children: [
                             {
-                              name: "محمد شعیب",
+                              name: "محمد یعقوب خان",
                               children: [
                                 {
-                                  name: "احمد شهیر دشتی",
-                                  children: [{ name: "تیمور دشتی" }],
+                                  name: "محمد یوسف خان",
+                                  children: [
+                                    {
+                                      name: "حیات‌الله خان",
+                                      children: [{ name: "تمیم یوسفی" }],
+                                    },
+                                  ],
                                 },
                                 {
-                                  name: "احمد منیر دشتی",
-                                  children: [{ name: "مالک دشتی" }],
+                                  name: "محمد ایوب خان",
+                                  children: [
+                                    {
+                                      name: "محمد آصف",
+                                      children: [
+                                        { name: "دانش دشتی" },
+                                        { name: "مصطفی روان" },
+                                      ],
+                                    },
+                                  ],
+                                },
+                                {
+                                  name: "عبدالکریم خان",
+                                  children: [
+                                    {
+                                      name: "خلیل الله",
+                                      children: [
+                                        { name: "صفی الله دستیار" },
+                                        { name: "مسیح الله دستیار" },
+                                      ],
+                                    },
+                                    { name: "عبدالمتین" },
+                                    { name: "احمد مسعود" },
+                                    { name: "احمدالله" },
+                                  ],
+                                },
+                                {
+                                  name: "عبدالغیاث خان",
+                                  children: [{ name: "حمیدالله صبحرنگ" }],
+                                },
+                                {
+                                  name: "محمد زمان خان",
+                                  children: [
+                                    { name: "غلام فاروق صدیق" },
+                                    { name: "محمد فیاض" },
+                                  ],
                                 },
                               ],
                             },
-                            {
-                              name: "احمد مختار",
-                              children: [{ name: "to be added" }],
-                            },
-                            {
-                              name: "احمد ضیا کچکنی",
-                              children: [{ name: "to be added" }],
-                            },
-                            {
-                              name: "محمد فهیم دشتی",
-                              children: [{ name: "ادریس دشتی" }],
-                            },
-                          ],
-                        },
-                        {
-                          name: "محمد شریف اکرمی",
-                          children: [{ name: "میرویس اکرم" }],
-                        },
-                      ],
-                    },
-                    {
-                      name: "عبدالغفار خان",
-                      children: [
-                        {
-                          name: "عبدالجبار",
-                          children: [
-                            { name: "عبدالحمید حقیق" },
-                            { name: "عبدالوحید سیرت" },
-                          ],
-                        },
-                        { name: "عبدالواسع" },
-                      ],
-                    },
-                    {
-                      name: "عبدالغفور خان",
-                      children: [
-                        { name: "عبدالستار" },
-                        {
-                          name: "عبدالشکور لنگریان",
-                          children: [
-                            { name: "احمد فواد لنگریان" },
-                            { name: "عنایت الله دشتی" },
-                            { name: "بهرام دشتی" },
-                          ],
-                        },
-                        {
-                          name: "عبدالصبور لنگریان",
-                          children: [{ name: "فردوس دشتی" }],
-                        },
-                      ],
-                    },
-                    {
-                      name: "عبدالاحمد خان",
-                      children: [
-                        { name: "عبدالرزاق خان" },
-                        {
-                          name: "عبدالبصیر لنگریان",
-                          children: [
-                            {
-                              name: "احمد میلاد لنگریان",
-                              name: "احمد بلال لنگریان",
-                            },
-                          ],
-                        },
-                        {
-                          name: "عبدالجمیل لنگریان",
-                          children: [{ name: "مسیح لنگریان" }],
-                        },
-                      ],
-                    },
-                    { name: "شاه‌عالم خان" },
-                    { name: "سکندر خان" },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "خان پاچا خان",
-              children: [
-                {
-                  name: "محمد یعقوب خان",
-                  children: [
-                    {
-                      name: "محمد یوسف خان",
-                      children: [
-                        {
-                          name: "حیات‌الله خان",
-                          children: [{ name: "تمیم یوسفی" }],
-                        },
-                      ],
-                    },
-                    {
-                      name: "محمد ایوب خان",
-                      children: [
-                        {
-                          name: "محمد آصف",
-                          children: [
-                            { name: "دانش دشتی" },
-                            { name: "مصطفی روان" },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: "عبدالکریم خان",
-                      children: [
-                        {
-                          name: "خلیل الله",
-                          children: [
-                            { name: "صفی الله دستیار" },
-                            { name: "مسیح الله دستیار" },
                           ],
                         },
                       ],
@@ -255,51 +271,43 @@
           ],
         };
 
-        // SVG setup
-        const width = 1500; // Increased width for better spacing
-        const height = 1400; // Increased height for better spacing
+        const width = 2500,
+          height = 2500;
         const svg = d3
           .select("svg")
           .attr("width", width)
           .attr("height", height)
           .append("g")
-          .attr("transform", "translate( 50, -50)"); // Adjusted translation for better spacing
-
-        // Create a tree layout with explicit node separation
+          .attr("transform", "translate(50,50)");
         const tree = d3
           .tree()
-          .size([height - 10, width - 300]) // Adjusted size for better spacing
-          .separation((a, b) => (a.parent === b.parent ? 2 : 3)); // Increased separation between nodes
-
+          .size([height - 100, width - 200])
+          .separation((a, b) => (a.parent === b.parent ? 2 : 3));
         const root = d3.hierarchy(data);
         tree(root);
 
-        const links = root.links();
-        const nodes = root.descendants();
-
-        // Draw curved connectors
         svg
           .selectAll(".link")
-          .data(links)
+          .data(root.links())
           .enter()
           .append("path")
           .attr("class", "link")
-          .attr("d", (d) => {
-            const source = { x: d.source.x, y: d.source.y };
-            const target = { x: d.target.x, y: d.target.y };
-            return `M${source.y},${source.x} C${(source.y + target.y) / 2},${
-              source.x
-            } ${(source.y + target.y) / 2},${target.x} ${target.y},${target.x}`;
-          })
+          .attr(
+            "d",
+            (d) =>
+              `M${d.source.y},${d.source.x}C${(d.source.y + d.target.y) / 2},${
+                d.source.x
+              } ${(d.source.y + d.target.y) / 2},${d.target.x} ${d.target.y},${
+                d.target.x
+              }`
+          )
           .attr("fill", "none")
           .attr("stroke", "#999")
-          .attr("stroke-width", 1.5)
-          .attr("stroke-dasharray", (d, i) => (i % 2 === 0 ? "5,5" : "none"));
+          .attr("stroke-width", 1.5);
 
-        // Draw nodes with increased spacing
         const node = svg
           .selectAll(".node")
-          .data(nodes)
+          .data(root.descendants())
           .enter()
           .append("g")
           .attr("class", "node")
@@ -307,24 +315,23 @@
 
         node
           .append("rect")
-          .attr("width", 120) // Fixed width for better readability
-          .attr("height", 40) // Fixed height for better readability
+          .attr("width", 120)
+          .attr("height", 40)
           .attr("rx", 8)
           .attr("ry", 8)
           .attr("fill", "#6c757d")
           .attr("stroke", "#333")
-          .attr("stroke-width", 0.5)
           .on("click", (event, d) => {
-            window.location.href = "#"; // Replace with actual links if necessary
+            window.location.href = "#";
           });
 
         node
           .append("text")
-          .attr("dy", 25) // Adjusted vertical alignment to match the rectangle height
-          .attr("x", 60) // Centered text within the rectangle
-          .style("text-anchor", "middle") // Center text horizontally
-          .style("fill", "white") // White text for better contrast
-          .style("font-size", "12px") // Increased font size for better readability
+          .attr("dy", 25)
+          .attr("x", 60)
+          .style("text-anchor", "middle")
+          .style("fill", "white")
+          .style("font-size", "15px")
           .text((d) => d.data.name);
       </script>
     </section>
