@@ -15,10 +15,16 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #004080;
-  color: white;
-  padding: 1rem;
+  position: sticky;
+  top: 0; /* Ensures it stays at the top */
+  width: 100%; /* Makes it span the full width */
+  background-color: #004080; /* Dark blue background */
+  color: white; /* White text */
+  padding: 1rem; /* Adds padding */
+  z-index: 1000; /* Keeps it above other elements */
 }
+
+
 
 header nav {
   display: flex;

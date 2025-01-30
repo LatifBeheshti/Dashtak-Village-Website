@@ -1,86 +1,242 @@
-// Get the search bar input field and magnifier icon elements
-const searchInput = document.getElementById('search-input');
-const searchIcon = document.getElementById('search-icon');
-const searchResults = document.getElementById('search-results');
-
-// Define the search data
-const searchData = [
-  { id: 1, name: 'John Doe' },
-  { id: 2, name: 'Jane Doe' },
-  { id: 3, name: 'Bob Smith' },
-  { id: 4, name: 'Alice Johnson' },
-  { id: 5, name: 'Mike Brown' },
-];
-
-// Add event listener to the search icon
-searchIcon.addEventListener('click', () => {
-  // Get the search query from the input field
-  const searchQuery = searchInput.value.trim();
-
-  // Filter the search data based on the search query
-  const filteredData = searchData.filter((item) => {
-    return item.name.toLowerCase().includes(searchQuery.toLowerCase());
-  });
-
-  // Render the search results
-  renderSearchResults(filteredData);
-});
-
-// Function to render the search results
-function renderSearchResults(data) {
-  // Clear the search results container
-  searchResults.innerHTML = '';
-
-  // Loop through the filtered data and render each item
-  data.forEach((item) => {
-    const searchResultItem = document.createElement('div');
-    searchResultItem.classList.add('search-results-item');
-    searchResultItem.textContent = item.name;
-    searchResults.appendChild(searchResultItem);
-  });
-
-  // Show the search results container
-  searchResults.style.display = 'block';
-}
-
-// Add event listener to the search input field
-searchInput.addEventListener('input', () => {
-  // Get the search query from the input field
-  const searchQuery = searchInput.value.trim();
-
-  // Filter the search data based on the search query
-  const filteredData = searchData.filter((item) => {
-    return item.name.toLowerCase().includes(searchQuery.toLowerCase());
-  });
-
-  // Render the search results
-  renderSearchResults(filteredData);
-});
 const data = {
-  name: "گلزار خان",
+  name: "ملک شجاع خان",
   children: [
     {
-      name: "لنگر خان",
+      name: "محمد وصال خان",
       children: [
         {
-          name: "فتح محمد خان",
+          name: "محمد غزال خان",
           children: [
             {
-              name: "عبدالروف خان",
+              name: "گلزار خان",
               children: [
-                { name: "عبدالرحیم روفی" },
-                { name: "عبدالرحمن" },
-                { name: "محمدسرور" },
-                { name: "عبدالله روفی" },
-                { name: "عبدالواحد روفی" },
-                { name: "عبدالقدیر روفی" },
-                { name: "عبدالاحد بهشتی" },
-                { name: "سراج‌الحق لنگریان" },
+                {
+                  name: "لنگر خان",
+                  children: [
+                    {
+                      name: "فتح محمد خان",
+                      children: [
+                        {
+                          name: "عبدالروف خان",
+                          children: [
+                            {
+                              name: "عبدالرحیم روفی",
+                              children: [
+                                {
+                                  name: "محمد نذیر",
+                                  children: [
+                                    { name: "احمد جاوید دشتی" },
+                                    { name: "احمد شبیر دشتی" },
+                                    { name: "احمد نصیر دشتی" },
+                                  ],
+                                },
+                              ],
+                            },
+                            { name: "عبدالرحمن" },
+                            {
+                              name: "محمدسرور",
+                              children: [
+                                {
+                                  name: "هدایت الله روفی",
+                                  children: [
+                                    { name: "احمد عثمان دشتی" },
+                                    { name: "حمزه دشتی" },
+                                  ],
+                                },
+                                { name: "احمد شجاع دشتی" },
+                              ],
+                            },
+                            {
+                              name: "عبدالله روفی",
+                              children: [{ name: "عبیدالله روفی" }],
+                            },
+                            {
+                              name: "عبدالواحد روفی",
+                              children: [
+                                { name: "محمد عمر دشتی" },
+                                { name: "سلیمان دشتی" },
+                              ],
+                            },
+                            {
+                              name: "عبدالقدیر روفی",
+                              children: [
+                                {
+                                  name: "عبدالمتین روفی",
+                                  children: [{ name: "سلطان احمد روفی" }],
+                                },
+                                {
+                                  name: "عبدالمبین روفی",
+                                  children: [{ name: "to be added" }],
+                                },
+                              ],
+                            },
+                            {
+                              name: "عبدالاحد بهشتی",
+                              children: [
+                                { name: "عبداللطیف بهشتی" },
+                                {
+                                  name: "عبدالحسیب بهشتی",
+                                  children: [
+                                    { name: "ادیب بهشتی" },
+                                    { name: "انس بهشتی" },
+                                  ],
+                                },
+                                { name: "عبدالعزیز بهشتی" },
+                                {
+                                  name: "عبدالباعث بهشتی",
+                                  children: [{ name: "محمد یعقوب بهشتی" }],
+                                },
+                                { name: "احمد یاسر بهشتی" },
+                              ],
+                            },
+                            {
+                              name: "سراج‌الحق لنگریان",
+                              children: [{ name: "ایمان لنگریان" }],
+                            },
+                          ],
+                        },
+                        {
+                          name: "محمد اکرم خان",
+                          children: [
+                            {
+                              name: "محمد قاسم",
+                              children: [
+                                {
+                                  name: "محمد شعیب",
+                                  children: [
+                                    {
+                                      name: "احمد شهیر دشتی",
+                                      children: [{ name: "تیمور دشتی" }],
+                                    },
+                                    {
+                                      name: "احمد منیر دشتی",
+                                      children: [{ name: "مالک دشتی" }],
+                                    },
+                                  ],
+                                },
+                                {
+                                  name: "احمد مختار",
+                                  children: [{ name: "to be added" }],
+                                },
+                                {
+                                  name: "احمد ضیا کچکنی",
+                                  children: [{ name: "to be added" }],
+                                },
+                                {
+                                  name: "محمد فهیم دشتی",
+                                  children: [{ name: "ادریس دشتی" }],
+                                },
+                              ],
+                            },
+                            {
+                              name: "محمد شریف اکرمی",
+                              children: [{ name: "میرویس اکرم" }],
+                            },
+                            {
+                              name: "محمد همایون",
+                              children: [{ name: "to be added" }],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      name: "شاه‌عالم خان",
+                      children: [{ name: "لعل آغا" }],
+                    },
+                    {
+                      name: "سکندر خان",
+                      children: [{ name: "امان الله حسرت" }],
+                    },
+                  ],
+                },
+                {
+                  name: "خان پاچا خان",
+                  children: [
+                    {
+                      name: "محمد یعقوب خان",
+                      children: [
+                        {
+                          name: "محمد یوسف خان",
+                          children: [
+                            {
+                              name: "حیات‌الله خان",
+                              children: [{ name: "تمیم یوسفی" }],
+                            },
+                          ],
+                        },
+                        {
+                          name: "محمد ایوب خان",
+                          children: [
+                            {
+                              name: "محمد آصف",
+                              children: [
+                                { name: "دانش دشتی" },
+                                { name: "مصطفی روان" },
+                              ],
+                            },
+
+                            { name: "محمدعالم" },
+                          ],
+                        },
+                        {
+                          name: "عبدالکریم خان",
+                          children: [
+                            {
+                              name: "خلیل الله",
+                              children: [
+                                { name: "صفی الله دستیار" },
+                                { name: "مسیح الله دستیار" },
+                              ],
+                            },
+                            { name: "عبدالمتین" },
+                            {
+                              name: "احمد مسعود",
+                              children: [
+                                { name: "مصطفی" },
+                                { name: "نصیراحمد" },
+                              ],
+                            },
+                            {
+                              name: "احمدولید",
+                              children: [{ name: "محمد خالد" }],
+                            },
+                          ],
+                        },
+                        {
+                          name: "عبدالغیاث خان",
+                          children: [
+                            { name: "حمیدالله صبحرنگ" },
+                            { name: "حشمت الله" },
+                            { name: "فریدالله" },
+                          ],
+                        },
+                        {
+                          name: "محمد زمان خان",
+                          children: [
+                            {
+                              name: "غلام فاروق صدیق",
+                              children: [
+                                { name: "محمد یوسف" },
+                                { name: "محمد سلیمان" },
+                                { name: "محمد اسماعیل" },
+                              ],
+                            },
+                            {
+                              name: "محمد فیاض",
+                              children: [
+                                { name: "طیب احمد" },
+                                { name: "علی احمد" },
+                                { name: "محمد جان" },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
               ],
-            },
-            {
-              name: "محمد اکرم خان",
-              children: [{ name: "محمد قاسم" }, { name: "محمد شریف اکرم‌ی" }],
             },
           ],
         },
@@ -89,36 +245,48 @@ const data = {
   ],
 };
 
-const width = 1000;
-const height = 800;
-
+// SVG setup
+const width = 2000; // Increased width for better spacing
+const height = 8200; // Increased height for better spacing
 const svg = d3
   .select("svg")
   .attr("width", width)
   .attr("height", height)
   .append("g")
-  .attr("transform", "translate(50,50)");
+  .attr("transform", "translate( 50, -100)"); // Adjusted translation for better spacing
 
-const tree = d3.tree().size([height - 100, width - 200]);
+// Create a tree layout with explicit node separation
+const tree = d3
+  .tree()
+  .size([height - 10, width - 200]) // Adjusted size for better spacing
+  .separation((a, b) => (a.parent === b.parent ? 2 : 3)); // Increased separation between nodes
+
 const root = d3.hierarchy(data);
+tree(root);
 
-const links = tree(root).links();
+const links = root.links();
 const nodes = root.descendants();
 
+// Draw curved connectors
 svg
   .selectAll(".link")
   .data(links)
   .enter()
   .append("path")
   .attr("class", "link")
-  .attr(
-    "d",
-    d3
-      .linkHorizontal()
-      .x((d) => d.y)
-      .y((d) => d.x)
-  );
+  .attr("d", (d) => {
+    const source = { x: d.source.x, y: d.source.y };
+    const target = { x: d.target.x, y: d.target.y };
+    return `M${source.y},${source.x} C${(source.y + target.y) / 2},${
+      source.x
+    } ${(source.y + target.y) / 2},${target.x} ${target.y},${target.x}`;
+  })
+  .attr("fill", "none")
+  .attr("stroke", "#999")
+  .attr("stroke-width", 1.5)
+  .attr("stroke-dasharray", (d, i) => (i % 2 === 0 ? "5,5" : "none"));
 
+// Draw nodes with increased spacing
 const node = svg
   .selectAll(".node")
   .data(nodes)
@@ -129,14 +297,62 @@ const node = svg
 
 node
   .append("rect")
-  .attr("width", (d) => Math.max(80, d.data.name.length * 10))
-  .attr("height", 40)
+  .attr("width", 120) // Fixed width for better readability
+  .attr("height", 40) // Fixed height for better readability
   .attr("rx", 8)
-  .attr("ry", 8);
+  .attr("ry", 8)
+  .attr("fill", "#6c757d")
+  .attr("stroke", "#333")
+  .attr("stroke-width", 0.5)
+  .on("click", (event, d) => {
+    window.location.href = "#"; // Replace with actual links if necessary
+  });
 
 node
   .append("text")
-  .attr("dy", 20)
-  .attr("x", (d) => Math.max(80, d.data.name.length * 10) / 2)
-  .style("text-anchor", "middle")
+  .attr("dy", 25) // Adjusted vertical alignment to match the rectangle height
+  .attr("x", 60) // Centered text within the rectangle
+  .style("text-anchor", "middle") // Center text horizontally
+  .style("fill", "white") // White text for better contrast
+  .style("font-size", "12px") // Increased font size for better readability
   .text((d) => d.data.name);
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Toggle navigation menu
+  const navToggler = document.querySelector("[data-nav-toggler]");
+  const navLinks = document.querySelectorAll("[data-nav-link]");
+  const nav = document.querySelector("[data-navbar]");
+
+  if (navToggler) {
+    navToggler.addEventListener("click", function () {
+      nav.classList.toggle("active");
+    });
+  }
+
+  // Close menu on link click
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById("search-input");
+  const searchIcon = document.getElementById("search-icon");
+
+  if (searchInput && searchIcon) {
+    searchIcon.addEventListener("click", function () {
+      alert("جستجو برای: " + searchInput.value);
+    });
+  }
+
+  // Contact form submission
+  const contactForm = document.getElementById("contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("پیام شما ارسال شد!");
+    });
+  }
+});
