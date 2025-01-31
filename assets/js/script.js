@@ -94,7 +94,9 @@ const data = {
                               children: [{ name: "ایمان لنگریان" }],
                             },
                           ],
+                        
                         },
+                      
                         {
                           name: "محمد اکرم خان",
                           children: [
@@ -128,16 +130,23 @@ const data = {
                                 },
                               ],
                             },
+                            { name: "محمد اسلم" },
+                            { name: "احمد ضیا" },
                             {
                               name: "محمد شریف اکرمی",
                               children: [{ name: "میرویس اکرم" }],
                             },
+                            { name: "محمد عارف" },
                             {
                               name: "محمد همایون",
                               children: [{ name: "to be added" }],
                             },
                           ],
+                        
                         },
+                      
+                         
+                      
                       ],
                     },
                     {
@@ -146,7 +155,10 @@ const data = {
                     },
                     {
                       name: "سکندر خان",
-                      children: [{ name: "امان الله حسرت" }],
+                      children: [
+                        { name: "امان الله حسرت" },
+                        { name: "محمد یونس" },
+                      ],
                     },
                   ],
                 },
