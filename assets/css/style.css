@@ -8,18 +8,25 @@
 body {
   font-family: "Tahoma", sans-serif;
   line-height: 1.6;
-  background-color: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #a0d2eb 0%,    /* Ice Cold starts at 0% */
+    #e5eaf5 20%,   /* Freeze Purple starts at 20% */
+    #d0bdf4 40%,   /* Medium Purple starts at 40% */
+    #8458B3 60%,   /* Purple Pain starts at 60% */
+    #a28089 80%,   /* Heavy Purple starts at 80% */
+    #494d5f 100%   /* New Color ends at 100% */
+  );
   color: #333;
   direction: rtl;
 }
 
 /* Header Styles */
 header {
-  position: sticky;
   top: 0;
   width: 100%;
-  background-color: #004080;
-  color: white;
+  background-color: transparent;
+  color: #272727;
   padding: 1rem;
   z-index: 1000;
 }
@@ -47,13 +54,13 @@ header ul li {
 
 header ul li a {
   text-decoration: none;
-  color: white;
+  color: #272727;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 header ul li a:hover {
-  color: #ffdd57;
+  text-decoration: underline;
 }
 
 .nav-toggler {
@@ -349,7 +356,7 @@ footer {
   text-align: center;
   height: 80px;
   padding: 2rem;
-  background-color: #272727;
+  background-color: transparent;
   color: white;
 }
 
