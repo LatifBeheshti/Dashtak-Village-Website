@@ -8,7 +8,7 @@
 body {
   font-family: "Tahoma", sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   color: #333;
   direction: rtl;
 }
@@ -16,15 +16,13 @@ body {
 /* Header Styles */
 header {
   position: sticky;
-  top: 0; /* Ensures it stays at the top */
-  width: 100%; /* Makes it span the full width */
-  background-color: #004080; /* Dark blue background */
-  color: white; /* White text */
-  padding: 1rem; /* Adds padding */
-  z-index: 1000; /* Keeps it above other elements */
+  top: 0;
+  width: 100%;
+  background-color: #004080;
+  color: white;
+  padding: 1rem;
+  z-index: 1000;
 }
-
-
 
 header nav {
   display: flex;
@@ -39,6 +37,8 @@ header .brand h1 {
 header ul {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 header ul li {
@@ -65,14 +65,43 @@ header ul li a:hover {
   display: none;
 }
 
-header.active ul {
-  display: block;
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-toggler {
+    display: block;
+  }
+
+  header ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #004080;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  header ul li {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  header ul li a {
+    display: block;
+  }
+
+  header.active ul {
+    display: flex;
+  }
 }
 
 /* Search Bar Styles */
 .search-bar-container {
   position: relative;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   margin: 20px auto;
 }
 
@@ -125,24 +154,56 @@ header.active ul {
 
 /* Section Styles */
 .section {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
-.section h2 {
-  font-size: 2rem;
+.section h1 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #1f1f1f;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1f1f1f;
 }
 
 .section p {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1rem;
+  color: #1f1f1f;
 }
 
-/* Pedigree Section */
-.pedigree-section {
-  background-color: #f0f8ff;
-  /* Reduced padding */
+@media (min-width: 768px) {
+  .section {
+    padding: 2rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .section p {
+    font-size: 1.2rem;
+  }
+}
+/* Chart Container */
+.chart-container {
+  width: 100%;
+  height: 400px; /* Reduced height for smaller screens */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  position: relative;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    height: 800px; /* Increased height for larger screens */
+    padding-top: 5rem;
+  }
 }
 
 /* Node and Link Styling */
@@ -194,13 +255,14 @@ header.active ul {
 
 /* Contact Form Styles */
 #contact-form {
-  width: 50%;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .form-grid {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -285,8 +347,9 @@ header.active ul {
 /* Footer Styles */
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #004080;
+  height: 80px;
+  padding: 2rem;
+  background-color: #272727;
   color: white;
 }
 
