@@ -289,6 +289,91 @@ const data = {
                     },
                   ],
                 },
+                {
+                  name: "خان پاچا خان",
+                  children: [
+                    {
+                      name: "محمد یعقوب خان",
+                      children: [
+                        {
+                          name: "محمد یوسف خان",
+                          children: [
+                            {
+                              name: "حیات‌الله خان",
+                              children: [{ name: "تمیم یوسفی" }],
+                            },
+                          ],
+                        },
+                        {
+                          name: "محمد ایوب خان",
+                          children: [
+                            {
+                              name: "محمد آصف",
+                              children: [
+                                { name: "دانش دشتی" },
+                                { name: "مصطفی روان" },
+                              ],
+                            },
+                            { name: "محمدعالم" },
+                          ],
+                        },
+                        {
+                          name: "عبدالکریم خان",
+                          children: [
+                            {
+                              name: "خلیل الله",
+                              children: [
+                                { name: "صفی الله دستیار" },
+                                { name: "مسیح الله دستیار" },
+                              ],
+                            },
+                            { name: "عبدالمتین" },
+                            {
+                              name: "احمد مسعود",
+                              children: [
+                                { name: "مصطفی" },
+                                { name: "نصیراحمد" },
+                              ],
+                            },
+                            {
+                              name: "احمدولید",
+                              children: [{ name: "محمد خالد" }],
+                            },
+                          ],
+                        },
+                        {
+                          name: "عبدالغیاث خان",
+                          children: [
+                            { name: "حمیدالله صبحرنگ" },
+                            { name: "حشمت الله" },
+                            { name: "فریدالله" },
+                          ],
+                        },
+                        {
+                          name: "محمد زمان خان",
+                          children: [
+                            {
+                              name: "غلام فاروق صدیق",
+                              children: [
+                                { name: "محمد یوسف" },
+                                { name: "محمد سلیمان" },
+                                { name: "محمد اسماعیل" },
+                              ],
+                            },
+                            {
+                              name: "محمد فیاض",
+                              children: [
+                                { name: "طیب احمد" },
+                                { name: "علی احمد" },
+                                { name: "محمد جان" },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
               ],
             },
           ],
@@ -298,14 +383,14 @@ const data = {
   ],
 };
 // SVG setup
-const width = 2000; // Increased width for better spacing
+const width = 1500; // Increased width for better spacing
 const height = 8600; // Increased height for better spacing
 const svg = d3
   .select("svg")
   .attr("width", width)
   .attr("height", height)
   .append("g")
-  .attr("transform", "translate( 50, -100)"); // Adjusted translation for better spacing
+  .attr("transform", "translate(50, -100)"); // Adjusted translation for better spacing
 
 // Create a tree layout with explicit node separation
 const tree = d3
@@ -319,7 +404,7 @@ tree(root);
 const links = root.links();
 const nodes = root.descendants();
 
-// Draw curved connectors
+// Draw straight connectors
 svg
   .selectAll(".link")
   .data(links)
@@ -329,9 +414,7 @@ svg
   .attr("d", (d) => {
     const source = { x: d.source.x, y: d.source.y };
     const target = { x: d.target.x, y: d.target.y };
-    return `M${source.y},${source.x} C${(source.y + target.y) / 2},${
-      source.x
-    } ${(source.y + target.y) / 2},${target.x} ${target.y},${target.x}`;
+    return `M${source.y},${source.x} L${target.y},${target.x}`; // Straight line
   })
   .attr("fill", "none")
   .attr("stroke", "#999")
@@ -368,7 +451,6 @@ node
   .style("fill", "white") // White text for better contrast
   .style("font-size", "12px") // Increased font size for better readability
   .text((d) => d.data.name);
-
 document.addEventListener("DOMContentLoaded", function () {
   // Toggle navigation menu
   const navToggler = document.querySelector("[data-nav-toggler]");
