@@ -10,12 +10,12 @@ body {
   line-height: 1.6;
   background: linear-gradient(
     to bottom,
-    #a0d2eb 0%,    /* Ice Cold starts at 0% */
-    #e5eaf5 20%,   /* Freeze Purple starts at 20% */
-    #d0bdf4 40%,   /* Medium Purple starts at 40% */
-    #8458B3 60%,   /* Purple Pain starts at 60% */
-    #a28089 80%,   /* Heavy Purple starts at 80% */
-    #494d5f 100%   /* New Color ends at 100% */
+    #a0d2eb 0%,
+    /* Ice Cold starts at 0% */ #e5eaf5 20%,
+    /* Freeze Purple starts at 20% */ #d0bdf4 40%,
+    /* Medium Purple starts at 40% */ #8458b3 60%,
+    /* Purple Pain starts at 60% */ #a28089 80%,
+    /* Heavy Purple starts at 80% */ #494d5f 100% /* New Color ends at 100% */
   );
   color: #333;
   direction: rtl;
@@ -374,4 +374,15 @@ footer {
   header ul li {
     margin: 1rem 0;
   }
+}
+
+#scrollToTopBtn {
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 48px;
+  width: 48px;
 }
