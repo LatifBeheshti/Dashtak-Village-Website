@@ -384,7 +384,7 @@ const data = {
 };
 // SVG setup
 const width = 1500; // Increased width for better spacing
-const height = 8600; // Increased height for better spacing
+const height = 11000; // Increased height for better spacing
 const svg = d3
   .select("svg")
   .attr("width", width)
