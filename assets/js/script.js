@@ -503,3 +503,22 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    let formData = new FormData(this);
+
+    fetch("process_contact.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        alert(data); // Show success/error message
+        document.getElementById("contact-form").reset(); // Clear form fields
+      })
+      .catch((error) => console.error("Error:", error));
+  });

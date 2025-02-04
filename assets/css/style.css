@@ -158,6 +158,64 @@ header ul li a:hover {
   background-color: #4caf50;
   color: #fff;
 }
+/* Recent Posts Section */
+#recent-posts {
+  padding: 2rem 0;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.post-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-card h3 {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.post-card p {
+  padding: 0 1rem 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.post-card .read-more {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.post-card .read-more:hover {
+  background-color: #0056b3;
+}
 
 /* Section Styles */
 .section {
@@ -201,7 +259,7 @@ header ul li a:hover {
   height: 400px; /* Reduced height for smaller screens */
   overflow-y: auto;
   border: 1px solid #ccc;
-  background-color: #ffffff;
+
   position: relative;
   padding: 1rem;
 }
@@ -246,7 +304,6 @@ header ul li a:hover {
   stroke: #ccc;
   stroke-width: 2px;
 }
-
 .chart-container {
   width: 100%; /* or any specific value, like 1200px */
   height: 800px; /* Increase height to visualize more content */
@@ -258,6 +315,9 @@ header ul li a:hover {
   padding-top: 4rem;
   padding-left: 0rem;
   padding-right: 0rem;
+
+  /* Box Shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
 }
 
 /* Contact Form Styles */
