@@ -163,20 +163,36 @@ header ul li a:hover {
   padding: 2rem 0;
 }
 
+/* CSS Styles */
+#recent-posts {
+  padding: 2rem 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 .posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
 }
 
 .post-card {
-  background: #fff;
-  border: 1px solid #ddd;
+  flex: 0 0 auto;
+  width: 300px;
+  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 1.5s ease, box-shadow 1.5s ease;
+  scroll-snap-align: start;
 }
 
 .post-card:hover {
@@ -217,6 +233,17 @@ header ul li a:hover {
   background-color: #0056b3;
 }
 
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.nav-button:hover {
+  color: #007bff;
+}
 /* Section Styles */
 .section {
   padding: 1rem;

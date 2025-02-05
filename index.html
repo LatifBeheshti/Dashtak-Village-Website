@@ -75,19 +75,26 @@
           می‌روند و ارزش فراوانی برای ساکنان و بازدیدکنندگان دارند.
         </p>
       </section>
-
       <!-- Recent Posts Section -->
       <section id="recent-posts" class="section">
-        <h2>آخرین مطالب</h2>
+        <div class="header-container">
+          <button class="nav-button prev-button">
+            <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+          </button>
+          <h2>آخرین مطالب</h2>
+          <button class="nav-button next-button">
+            <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
+          </button>
+        </div>
         <div class="posts-grid">
           <!-- Post 1: گلزار خان -->
           <div class="post-card">
             <img src="https://via.placeholder.com/400x300" alt="گلزار خان" />
             <h3>مرحوم گلزار خان - بنیانگذار قریه دشتک</h3>
             <p>
-              مرحوم گلزار خان، بنیانگذار قریه دشتک، فردی با اراده و دوراندیش بود.
-              او در دوران خود با خرید زمین‌های این منطقه، پایه‌های یک جامعه مستقل
-              و پایدار را بنا نهاد.
+              مرحوم گلزار خان، بنیانگذار قریه دشتک، فردی با اراده و دوراندیش
+              بود. او در دوران خود با خرید زمین‌های این منطقه، پایه‌های یک جامعه
+              مستقل و پایدار را بنا نهاد.
             </p>
             <a href="persona.html#گلزار-خان" class="read-more">ادامه مطلب</a>
           </div>
@@ -97,8 +104,8 @@
             <img src="https://via.placeholder.com/400x300" alt="لنگر خان" />
             <h3>مرحوم لنگر خان - ادامه‌دهنده راه گلزار خان</h3>
             <p>
-              لنگر خان، فرزند گلزار خان، پس از پدرش به عنوان رهبر قریه دشتک انتخاب
-              شد. او با مدیریت قوی و دوراندیشی خود، راه پدر را ادامه داد.
+              لنگر خان، فرزند گلزار خان، پس از پدرش به عنوان رهبر قریه دشتک
+              انتخاب شد. او با مدیریت قوی و دوراندیشی خود، راه پدر را ادامه داد.
             </p>
             <a href="persona.html#لنگر-خان" class="read-more">ادامه مطلب</a>
           </div>
@@ -114,12 +121,70 @@
               سراج الزبیر مجددی، فرزند مرحوم گلزار خان، یکی از شخصیت‌های برجسته
               فرهنگی و مذهبی در تاریخ قریه دشتک است.
             </p>
-            <a href="persona.html#سراج-الزبیر-مجددی" class="read-more">ادامه مطلب</a>
+            <a href="persona.html#سراج-الزبیر-مجددی" class="read-more"
+              >ادامه مطلب</a
+            >
+          </div>
+
+          <!-- Post 4: New Post -->
+          <div class="post-card">
+            <img src="https://via.placeholder.com/400x300" alt="New Post 1" />
+            <h3>عنوان پست جدید ۱</h3>
+            <p>
+              این یک پست جدید است که به بخش آخرین مطالب اضافه شده است. این پست
+              می‌تواند اطلاعات بیشتری در مورد موضوعات مختلف ارائه دهد.
+            </p>
+            <a href="persona.html#new-post-1" class="read-more">ادامه مطلب</a>
+          </div>
+
+          <!-- Post 5: New Post -->
+          <div class="post-card">
+            <img src="https://via.placeholder.com/400x300" alt="New Post 2" />
+            <h3>عنوان پست جدید ۲</h3>
+            <p>
+              این یک پست جدید دیگر است که به بخش آخرین مطالب اضافه شده است. این
+              پست می‌تواند اطلاعات بیشتری در مورد موضوعات مختلف ارائه دهد.
+            </p>
+            <a href="persona.html#new-post-2" class="read-more">ادامه مطلب</a>
+          </div>
+
+          <!-- Post 6: New Post -->
+          <div class="post-card">
+            <img src="https://via.placeholder.com/400x300" alt="New Post 3" />
+            <h3>عنوان پست جدید ۳</h3>
+            <p>
+              این یک پست جدید دیگر است که به بخش آخرین مطالب اضافه شده است. این
+              پست می‌تواند اطلاعات بیشتری در مورد موضوعات مختلف ارائه دهد.
+            </p>
+            <a href="persona.html#new-post-3" class="read-more">ادامه مطلب</a>
           </div>
         </div>
       </section>
 
-    
+      <!-- JavaScript -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const postsGrid = document.querySelector(".posts-grid");
+          const nextButton = document.querySelector(".prev-button");
+          const prevButton = document.querySelector(".next-button");
+
+          const scrollStep = 300; // Adjust this value based on the width of your post cards
+
+          prevButton.addEventListener("click", () => {
+            postsGrid.scrollBy({
+              left: -scrollStep, // Scroll left
+              behavior: "smooth",
+            });
+          });
+
+          nextButton.addEventListener("click", () => {
+            postsGrid.scrollBy({
+              left: scrollStep, // Scroll right
+              behavior: "smooth",
+            });
+          });
+        });
+      </script>
       <!-- Contact Section -->
       <section id="contact" class="section">
         <h2>تماس با ما</h2>
@@ -223,7 +288,5 @@
       <!--<button id="scrollToTopBtn">☝️</button>-->
       <p>&copy; 2025 تاریخچه خانواده. تمامی حقوق محفوظ است.</p>
     </footer>
-
-   
   </body>
 </html>
