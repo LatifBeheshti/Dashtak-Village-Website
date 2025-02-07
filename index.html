@@ -13,7 +13,6 @@
   </head>
 
   <body>
-    <!-- Header -->
     <header>
       <nav data-navbar>
         <div class="brand">
@@ -25,7 +24,9 @@
           <i id="search-icon" class="fas fa-search"></i>
         </div>
 
-        <button data-nav-toggler class="nav-toggler">☰</button>
+        <a href="donation.html">
+          <button data-nav-toggler class="nav-toggler">☰</button>
+        </a>
         <ul>
           <li>
             <a href="#home" data-nav-link
@@ -36,10 +37,17 @@
           <li><a href="persona.html" data-nav-link>تاریخچه و شخصیت‌ها</a></li>
           <li><a href="pedigree.html" data-nav-link>شجره‌نامه</a></li>
           <li><a href="#contact" data-nav-link>تماس با ما</a></li>
+          <!-- Donate Button -->
+          <li>
+            <button
+              class="gfm-donate-button hrt-primary-button hrt-primary-button--large"
+            >
+              Donate Now
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
-
     <!-- Main Content -->
     <main>
       <!-- Home Section -->
@@ -160,7 +168,30 @@
           </div>
         </div>
       </section>
-
+      <!--Donation-->
+      <section id="donation" class="section">
+        <h3>کمک به اتحادیه دشتک</h3>
+        <div class="donation-container">
+          <div class="donation-card">
+            <p>این یک متن نمونه برای اولین ویجت کمک مالی است.</p>
+            <div
+              class="gfm-embed"
+              data-url="https://www.gofundme.com/f/2md2m-dashtak-village-union-fundraising-europe/widget/small?sharesheet=fundraiser sidebar&attribution_id=sl:7c98b7e8-2820-40b6-ae78-9358ac1bdecc"
+            ></div>
+          </div>
+          <div class="donation-card">
+            <p>این یک متن نمونه برای دومین ویجت کمک مالی است.</p>
+            <div
+              class="gfm-embed"
+              data-url="https://www.gofundme.com/f/2md2m-dashtak-village-union-fundraising-europe/widget/small?sharesheet=fundraiser sidebar&attribution_id=sl:7c98b7e8-2820-40b6-ae78-9358ac1bdecc"
+            ></div>
+          </div>
+        </div>
+        <script
+          defer
+          src="https://www.gofundme.com/static/js/embed.js"
+        ></script>
+      </section>
       <!-- JavaScript -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {

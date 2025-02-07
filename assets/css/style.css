@@ -37,6 +37,47 @@ header nav {
   align-items: center;
 }
 
+/* Donate Button in Navbar */
+nav ul li .gfm-donate-button {
+  margin-left: 1rem; /* Add space between the button and other nav items */
+  padding: 0.5rem 1rem; /* Adjust padding for better fit in the navbar */
+  font-size: 0.9rem; /* Slightly smaller font size for navbar */
+  min-height: 2.5rem; /* Adjust height for navbar */
+  background: linear-gradient(180deg, #fdb933, #f99a32);
+  border-radius: 0.75rem; /* Fixed missing semicolon */
+  border: 0; /* Simplified border property */
+  color: #252525; /* Ensure text color is set */
+  font-weight: 700; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: inline-flex; /* Align text and icon properly */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  text-decoration: none; /* Remove underline */
+  transition: background 0.3s, transform 0.3s; /* Smooth hover effects */
+}
+
+nav ul li .gfm-donate-button:hover {
+  background: linear-gradient(180deg, #f99a32, #fdb933); /* Reverse gradient on hover */
+}
+
+
+
+/* Ensure the button aligns properly with other nav items */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between nav items */
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+  nav ul li .gfm-donate-button {
+    margin-left: 0; /* Remove margin on smaller screens */
+    width: 100%; /* Full width for better mobile usability */
+    margin-top: 0.5rem; /* Add space above the button */
+  }
+}
+
 header .brand h1 {
   font-size: 1.5rem;
 }
@@ -345,6 +386,72 @@ header ul li a:hover {
 
   /* Box Shadow */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
+}
+
+/* Donation Section */
+#donation {
+  padding: 2rem;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#donation h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.donation-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between cards */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.donation-card {
+  max-width: 300px; /* Adjust width for small widgets */
+  width: 100%; /* Ensure it takes full width of its container */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.gfm-embed {
+  height: 300px; /* Adjust height for small widgets */
+  margin-left: 1rem;
+  background: transparent;
+}
+
+.donation-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #donation {
+    padding: 1rem;
+  }
+
+  #donation h3 {
+    font-size: 1.5rem;
+  }
+
+  .donation-container {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    gap: 1rem;
+  }
+
+  .donation-card {
+    padding: 0.5rem;
+  }
 }
 
 /* Contact Form Styles */
