@@ -8,15 +8,7 @@
 body {
   font-family: "Tahoma", sans-serif;
   line-height: 1.6;
-  background: linear-gradient(
-    to bottom,
-    #a0d2eb 0%,
-    /* Ice Cold starts at 0% */ #e5eaf5 20%,
-    /* Freeze Purple starts at 20% */ #d0bdf4 40%,
-    /* Medium Purple starts at 40% */ #8458b3 60%,
-    /* Purple Pain starts at 60% */ #a28089 80%,
-    /* Heavy Purple starts at 80% */ #494d5f 100% /* New Color ends at 100% */
-  );
+  background: white;
   color: #333;
   direction: rtl;
 }
@@ -57,10 +49,12 @@ nav ul li .gfm-donate-button {
 }
 
 nav ul li .gfm-donate-button:hover {
-  background: linear-gradient(180deg, #f99a32, #fdb933); /* Reverse gradient on hover */
+  background: linear-gradient(
+    180deg,
+    #f99a32,
+    #fdb933
+  ); /* Reverse gradient on hover */
 }
-
-
 
 /* Ensure the button aligns properly with other nav items */
 nav ul {
@@ -204,36 +198,25 @@ header ul li a:hover {
   padding: 2rem 0;
 }
 
-/* CSS Styles */
-#recent-posts {
-  padding: 2rem 0;
-}
-
 .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .posts-grid {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
   gap: 20px;
-  padding: 10px 0;
-  scroll-snap-type: x mandatory;
+  padding: 10px;
 }
 
 .post-card {
-  flex: 0 0 auto;
-  width: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 1.5s ease, box-shadow 1.5s ease;
-  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-card:hover {
@@ -272,6 +255,29 @@ header ul li a:hover {
 
 .post-card .read-more:hover {
   background-color: #0056b3;
+}
+
+/* Size Classes */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.post-card.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.post-card.medium {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.post-card.small {
+  grid-row: span 1;
 }
 
 .nav-button {
@@ -545,12 +551,82 @@ header ul li a:hover {
   font-size: 1rem;
 }
 
+/* Donation Widgets Section */
+.donation-widgets {
+  display: flex;
+  justify-content: space-between; /* Space widgets evenly */
+  align-items: stretch; /* Stretch widgets to match height */
+  padding: 2rem;
+  background-color: #f9f9f9;
+  margin: 2rem auto; /* Center the container horizontally */
+  max-width: 1200px; /* Set a max-width for the container */
+  width: 100%; /* Ensure it takes full width up to max-width */
+  gap: 2rem; /* Add consistent spacing between widgets */
+}
+
+.donation-widget {
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allow widgets to grow and fill available space */
+  min-width: 300px; /* Minimum width for each widget */
+  max-width: 45%; /* Maximum width for each widget */
+  height: auto; /* Let the height adjust based on content */
+}
+
+.donation-widget h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.donation-widget p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.donation-widget .gfm-embed{
+
+}
+
+.donate-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .donation-widgets {
+    flex-direction: column; /* Stack widgets vertically */
+    align-items: stretch; /* Stretch widgets to full width */
+    gap: 1rem; /* Reduce gap for stacked layout */
+  }
+
+  .donation-widget {
+    width: 100%; /* Full width for stacked widgets */
+    max-width: 100%; /* Remove max-width restriction */
+    margin: 0; /* Remove margin for stacked layout */
+  }
+}
 /* Footer Styles */
 footer {
   text-align: center;
   height: 80px;
   padding: 2rem;
-  background-color: transparent;
+  background-color: #272727;
   color: white;
 }
 
