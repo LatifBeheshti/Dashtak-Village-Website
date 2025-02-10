@@ -3,50 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>تاریخچه و شخصیت‌ها - قریه دشتک</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>وب سایت قریه دشتک</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
+    <!-- Header -->
     <header>
       <nav data-navbar>
         <div class="brand">
-          <h1>قریه دشتک</h1>
+          <a href="home.html"> <!-- Replace "index.html" with the desired link -->
+            <h1>قریه دشتک</h1>
+          </a>
         </div>
-        <!-- Search Bar Container -->
+        <!-- Search Bar -->
         <div class="search-bar-container">
           <input id="search-input" type="text" placeholder="جستجو..." />
           <i id="search-icon" class="fas fa-search"></i>
         </div>
-
-        <a href="donation.html">
-          <button data-nav-toggler class="nav-toggler">☰</button>
-        </a>
+        <!-- Navigation Links -->
         <ul>
           <li>
-            <a href="#home" data-nav-link
+            <a href="home.html" data-nav-link
               ><i class="fa-solid fa-house fa-lg"></i
             ></a>
           </li>
           <li><a href="#about" data-nav-link>درباره قریه دشتک</a></li>
           <li><a href="persona.html" data-nav-link>تاریخچه و شخصیت‌ها</a></li>
           <li><a href="pedigree.html" data-nav-link>شجره‌نامه</a></li>
-          <li><a href="/ contact.html" data-nav-link>تماس با ما</a></li>
+          <li><a href="contact.html" data-nav-link>تماس با ما</a></li>
           <!-- Donate Button -->
           <li>
-            <a href="donation.html"
-              ><button
-                class="gfm-donate-button hrt-primary-button hrt-primary-button--large"
-              >
-                Donate Now
-              </button>
-            </a>
+            <a href="donation.html" class="gfm-donate-button">Donate Now</a>
           </li>
         </ul>
+        <!-- Mobile Toggler -->
+        <button class="nav-toggler">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </header>
 
@@ -59,7 +60,10 @@
         <!-- Post 1: گلزار خان -->
         <div class="post">
           <h2>مرحوم گلزار خان - بنیانگذار قریه دشتک</h2>
-          <img src="https://via.placeholder.com/600x400" alt="گلزار خان" />
+          <img
+            src="https://via.placeholder.com/600x400"
+            alt="تصویر گلزار خان - بنیانگذار قریه دشتک"
+          />
           <p>
             مرحوم گلزار خان، بنیانگذار قریه دشتک، فردی با اراده و دوراندیش بود.
             او در دوران خود با خرید زمین‌های این منطقه، پایه‌های یک جامعه مستقل
@@ -73,7 +77,10 @@
         <!-- Post 2: لنگر خان -->
         <div class="post">
           <h2>مرحوم لنگر خان - ادامه‌دهنده راه گلزار خان</h2>
-          <img src="https://via.placeholder.com/600x400" alt="لنگر خان" />
+          <img
+            src="https://via.placeholder.com/600x400"
+            alt="تصویر لنگر خان - ادامه‌دهنده راه گلزار خان"
+          />
           <p>
             لنگر خان، فرزند گلزار خان، پس از پدرش به عنوان رهبر قریه دشتک انتخاب
             شد. او با مدیریت قوی و دوراندیشی خود، راه پدر را ادامه داد و در
@@ -89,7 +96,7 @@
           <h2>سراج الزبیر مجددی - شخصیت برجسته فرهنگی</h2>
           <img
             src="https://via.placeholder.com/600x400"
-            alt="سراج الزبیر مجددی"
+            alt="تصویر سراج الزبیر مجددی - شخصیت برجسته فرهنگی"
           />
           <p>
             سراج الزبیر مجددی، فرزند مرحوم گلزار خان، یکی از شخصیت‌های برجسته
@@ -106,7 +113,7 @@
           <h2>مسجد تاریخی قریه دشتک</h2>
           <img
             src="https://via.placeholder.com/600x400"
-            alt="مسجد تاریخی دشتک"
+            alt="تصویر مسجد تاریخی دشتک"
           />
           <p>
             مسجد تاریخی قریه دشتک، یکی از قدیمی‌ترین بناهای این منطقه است که
@@ -123,7 +130,7 @@
           <h2>درختان چنار کهنسال دشتک</h2>
           <img
             src="https://via.placeholder.com/600x400"
-            alt="درختان چنار دشتک"
+            alt="تصویر درختان چنار دشتک"
           />
           <p>
             درختان چنار کهنسال قریه دشتک، با قدمتی چندصدساله، نمادی از مقاومت و
@@ -137,7 +144,10 @@
         <!-- Post 6: نقش جوانان در احیای فرهنگ و تاریخ دشتک -->
         <div class="post">
           <h2>نقش جوانان در احیای فرهنگ و تاریخ دشتک</h2>
-          <img src="https://via.placeholder.com/600x400" alt="جوانان دشتک" />
+          <img
+            src="https://via.placeholder.com/600x400"
+            alt="تصویر جوانان دشتک"
+          />
           <p>
             جوانان قریه دشتک در سال‌های اخیر نقش مهمی در احیای فرهنگ و تاریخ این
             منطقه ایفا کرده‌اند. با برگزاری مراسم‌های فرهنگی، برنامه‌های آموزشی
@@ -152,8 +162,6 @@
 
     <!-- Footer -->
     <footer>
-      <!-- Scroll to top button -->
-      <!--<button id="scrollToTopBtn">☝️</button>-->
       <p>&copy; 2025 تاریخچه خانواده. تمامی حقوق محفوظ است.</p>
     </footer>
 

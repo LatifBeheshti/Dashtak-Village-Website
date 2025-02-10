@@ -4,88 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>وب سایت قریه دشتک</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <!-- Header -->
     <header>
       <nav data-navbar>
         <div class="brand">
-          <h1>قریه دشتک</h1>
+          <a href="home.html"> <!-- Replace "index.html" with the desired link -->
+            <h1>قریه دشتک</h1>
+          </a>
         </div>
-        <!-- Search Bar Container -->
+        <!-- Search Bar -->
         <div class="search-bar-container">
           <input id="search-input" type="text" placeholder="جستجو..." />
           <i id="search-icon" class="fas fa-search"></i>
         </div>
-        <!-- Donate Button -->
-        <a href="donation.html">
-          <button data-nav-toggler class="nav-toggler">☰</button>
-        </a>
+        <!-- Navigation Links -->
         <ul>
           <li>
-            <a href="#home" data-nav-link
+            <a href="home.html" data-nav-link
               ><i class="fa-solid fa-house fa-lg"></i
             ></a>
           </li>
           <li><a href="#about" data-nav-link>درباره قریه دشتک</a></li>
           <li><a href="persona.html" data-nav-link>تاریخچه و شخصیت‌ها</a></li>
           <li><a href="pedigree.html" data-nav-link>شجره‌نامه</a></li>
-          <li><a href="/contact.html" data-nav-link>تماس با ما</a></li>
+          <li><a href="contact.html" data-nav-link>تماس با ما</a></li>
           <!-- Donate Button -->
           <li>
-            <a href="donation.html"
-              ><button
-                class="gfm-donate-button hrt-primary-button hrt-primary-button--large"
-              >
-                Donate Now
-              </button>
-            </a>
+            <a href="donation.html" class="gfm-donate-button">Donate Now</a>
           </li>
         </ul>
+        <!-- Mobile Toggler -->
+        <button class="nav-toggler">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </header>
-    <section class="donation-widgets">
-      <!-- US/Canada Donation Widget -->
-      <div class="donation-widget">
-        <h3>حمایت مالی از ایالات متحده و کانادا</h3>
-        <p>
-          برای حمایت مالی از طریق ایالات متحده و کانادا، لطفاً از دکمه زیر استفاده
-          کنید. کمک‌های شما به حفظ و توسعه این وب‌سایت کمک می‌کند.
-        </p>
-        <div class="gfm-embed" data-url="https://www.gofundme.com/f/fundraising-for-relatives-and-family/widget/medium?sharesheet=fundraiser sidebar&attribution_id=sl:2b0b7a99-f633-4142-8a9f-2d90c56dc737"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
-        
-      </div>
-    
-      <!-- Europe Donation Widget -->
-      <div class="donation-widget">
-        <h3>حمایت مالی از اروپا</h3>
-        <p>
-          برای حمایت مالی از طریق کشورهای اروپایی، لطفاً از دکمه زیر استفاده کنید.
-          کمک‌های شما به حفظ و توسعه این وب‌سایت کمک می‌کند.
-        </p>
-        <div class="gfm-embed" data-url="https://www.gofundme.com/f/2md2m-dashtak-village-union-fundraising-europe/widget/medium?sharesheet=manage hero&attribution_id=sl:7c98b7e8-2820-40b6-ae78-9358ac1bdecc"></div>
-        <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
-      </div>
-    </section>
-    
-    <!-- GoFundMe Embed Script -->
-    <script
-      defer
-      src="https://www.gofundme.com/static/js/embed.js"
-    ></script>
-    </section>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Donation Widgets Section -->
+      <section class="donation-widgets">
+        <!-- US/Canada Donation Widget -->
+        <div class="donation-widget">
+          <h3>حمایت مالی از ایالات متحده و کانادا</h3>
+          <p>
+            برای حمایت مالی از طریق ایالات متحده و کانادا، لطفاً از دکمه زیر
+            استفاده کنید. کمک‌های شما به حفظ و توسعه این وب‌سایت کمک می‌کند.
+          </p>
+          <div
+            class="gfm-embed"
+            data-url="https://www.gofundme.com/f/fundraising-for-relatives-and-family/widget/medium?sharesheet=fundraiser sidebar&attribution_id=sl:2b0b7a99-f633-4142-8a9f-2d90c56dc737"
+          ></div>
+        </div>
+
+        <!-- Europe Donation Widget -->
+        <div class="donation-widget">
+          <h3>حمایت مالی از اروپا</h3>
+          <p>
+            برای حمایت مالی از طریق کشورهای اروپایی، لطفاً از دکمه زیر استفاده
+            کنید. کمک‌های شما به حفظ و توسعه این وب‌سایت کمک می‌کند.
+          </p>
+          <div
+            class="gfm-embed"
+            data-url="https://www.gofundme.com/f/2md2m-dashtak-village-union-fundraising-europe/widget/medium?sharesheet=manage hero&attribution_id=sl:7c98b7e8-2820-40b6-ae78-9358ac1bdecc"
+          ></div>
+        </div>
+      </section>
+    </main>
+
     <!-- Footer -->
     <footer>
-      <!-- Scroll to top button -->
-      <!--<button id="scrollToTopBtn">☝️</button>-->
       <p>&copy; 2025 تاریخچه خانواده. تمامی حقوق محفوظ است.</p>
     </footer>
+
+    <!-- GoFundMe Embed Script -->
+    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
   </body>
 </html>

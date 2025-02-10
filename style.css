@@ -1,0 +1,432 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Vazir", Tahoma, sans-serif;
+  line-height: 1.6;
+  background: #f8f9fa;
+  color: #333;
+  direction: rtl;
+}
+
+.fas,
+.far,
+.fab {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/* Header Styles */
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header .brand h1 {
+  font-size: 1.5rem;
+  color: #272727;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #272727;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+  color: #007bff;
+}
+
+.nav-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-toggler {
+    display: block;
+  }
+
+  header ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  header ul li {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  header.active ul {
+    display: flex;
+  }
+}
+
+/* Section Styles */
+.section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1f1f1f;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #272727;
+  color: white;
+}
+
+/* Back to Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background: #0056b3;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("assets/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Recent Posts Section */
+.posts-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.posts-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.post-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-card h3 {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.post-card p {
+  padding: 0 1rem 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.post-card .read-more {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.post-card .read-more:hover {
+  background: #0056b3;
+}
+
+/* Donation Section */
+.donation-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.donation-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+}
+
+.donation-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Contact Form */
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.input-container {
+  margin-bottom: 1rem;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-container textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+/* Style for input containers */
+.input-container {
+  position: relative;
+  margin-bottom: 20px; /* Space between input fields */
+}
+
+/* Style for input wrapper */
+.input-wrapper {
+  position: relative;
+}
+
+/* Style for input fields */
+.input-wrapper input,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Add padding for the icon */
+  font-size: 16px;
+  border: 1px solid #979090;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style for textarea */
+.input-wrapper textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 100px; /* Set a minimum height */
+}
+
+/* Style for icons */
+.input-wrapper .icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust icon position */
+  transform: translateY(-50%); /* Center vertically */
+  color: #888; /* Icon color */
+  font-size: 16px; /* Icon size */
+  pointer-events: none; /* Ensure the icon doesn't interfere with input */
+}
+
+/* Style for textarea icon */
+.input-wrapper textarea + .icon {
+  top: 20px; /* Adjust position for textarea */
+}
+
+/* Style for the form box */
+.form-box {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect for glass-morphism */
+  border-radius: 15px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  padding: 30px; /* Inner spacing */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); /* Subtle shadow */
+  max-width: 600px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the form */
+}
+
+/* Style for input containers */
+.input-container {
+  position: relative;
+  margin-bottom: 20px; /* Space between input fields */
+}
+
+/* Style for input wrapper */
+.input-wrapper {
+  position: relative;
+}
+
+/* Style for input fields */
+.input-wrapper input,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Add padding for the icon */
+  font-size: 16px;
+  border: 1px solid #888; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #333; /* Text color */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+/* Style for textarea */
+.input-wrapper textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 100px; /* Set a minimum height */
+}
+
+/* Style for icons */
+.input-wrapper .icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust icon position */
+  transform: translateY(-50%); /* Center vertically */
+  color: #888; /* Icon color */
+  font-size: 16px; /* Icon size */
+  pointer-events: none; /* Ensure the icon doesn't interfere with input */
+}
+
+/* Style for textarea icon */
+.input-wrapper textarea + .icon {
+  top: 20px; /* Adjust position for textarea */
+}
+
+/* Style for submit button */
+.submit-btn {
+  background: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Smooth transition for hover */
+}
+
+.submit-btn:hover {
+  background: #0056b3; /* Darker background on hover */
+}
+
+/* Style for labels */
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Label text color */
+  font-weight: bold;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.submit-btn {
+  background: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
